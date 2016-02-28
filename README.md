@@ -9,7 +9,7 @@ Some form of input (widget: textbox, radio button, checkbox, ...) Some operation
 
 Reproducible Pitch Presentation
 
-Simulation Pitch Repository https://github.com/Vijayreddym/DDPShinyApps/new/master?readme=1
+Simulation Pitch Repository http://rpubs.com/Vijayreddym/SimulationShinnyApp
 
 OK, you've made your shiny app, now it's time to make your pitch. You get 5 slides (inclusive of the title slide) to pitch a your app. You're going to create a web page using Slidify with an html5 slide deck.
 
