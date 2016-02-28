@@ -1,0 +1,46 @@
+CourseProject: 
+Simulation experiment : Standard normals
+========================================================
+author: VM
+date: 02/29/2016
+
+Simulation experiment with roll of dies.
+
+========================================================
+Experiment to proves mean will be concentrated around the popolution mean as the number of experiment increase and resembles bell curve
+For more details 
+
+- Slide With Code
+- Slide With Plot
+- Conclusion
+
+
+Code
+========================================================
+```{r}
+library(UsingR); data(galton); library(ggplot2)
+nosim <- 1000
+dat <- data.frame(
+x = c(sample(1 : 6, nosim, replace = TRUE),
+  apply(matrix(sample(1 : 6, nosim * 2, replace = TRUE), nosim), 1, mean),
+  apply(matrix(sample(1 : 6, nosim * 3, replace = TRUE), nosim), 1, mean),
+  apply(matrix(sample(1 : 6, nosim * 4, replace = TRUE), nosim), 1, mean)),
+size = factor(rep(1 : 4, rep(nosim, 4))))
+```
+
+Plot to show the Mean for different dice rolls
+========================================================
+
+```{r, echo=FALSE}
+    # plot histograms of means by sample size
+    g <- ggplot(dat, aes(x = x, fill = size)) + geom_histogram(alpha = .20, binwidth=.25, colour = "black")
+    g + facet_grid(.~ size)
+    
+```
+
+Conclusion
+========================================================
+This simulation demostrates that the more data that goes into the sample mean, 
+the more concentrated its density/mass functions are around the population mean and
+the histogram is also centered at 3.5. so it is 3 and 4 and concentrated aroung 3.5 as the simulation increses and resmebled bell curve)
+
